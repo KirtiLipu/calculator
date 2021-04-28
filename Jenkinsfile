@@ -12,7 +12,9 @@ pipeline{
             }
         }
         stage('Email Notification'){
-            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'devopslipu@gmail.com', sendToIndividuals: false])
+            steps{
+                step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'devopslipu@gmail.com', sendToIndividuals: false])
+            }
         }
     }
 }
