@@ -11,10 +11,5 @@ pipeline{
                 sh "mvn test"
             }
         }
-        stage('Email Notification'){
-            steps{
-                step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'devopslipu@gmail.com', sendToIndividuals: false])
-            }
-        }
     }
 }
